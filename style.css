@@ -1,0 +1,165 @@
+
+body{
+
+    font-family: 'Lato',sans-serif;
+    margin:0;
+    padding:0;
+}
+
+nav{
+
+    background-color: #111;
+    color: white;
+    padding: 20px 50px;
+}
+.navtop{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.navitem img {
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+   
+}
+
+.navitemsearch{
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    margin-left:80px;
+}
+
+.search {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    width: 250px; 
+    
+
+}
+.searchbox{
+
+    border:none;
+    background-color: transparent;
+    
+}
+.searchbtn{
+    width:20px;
+    margin-left:10px;
+}
+
+
+.searchbox::placeholder{
+    color: lightgray;
+
+}
+
+.limitedoffer{
+    font-size: 20px;
+    border-bottom: 2px solid green;
+    color: lightgray;
+}
+
+.navbottom{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+
+.menuitem{
+
+    margin-right: 50px;
+    color: lightgray;
+    font-weight: 100;
+}
+
+.menuitem:hover{
+    
+    cursor: pointer;
+}
+
+.sliderwrapper{
+
+    display: flex;
+    justify-content: center;
+    width: 500vw;
+    transition: all 1s ease-in-out;
+}
+
+.slideritem{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position: relative;
+    
+}
+
+.slidertitle{
+
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    top:0px;
+    right: 10%;
+    font-size: 60px;
+    
+  
+}
+
+
+
+.sliderprice{
+
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    font-weight: 300;
+    top:0px;
+    left: 10%;
+    font-size: 60px;
+    color:rgb(48, 49, 53) ;
+    
+  
+}
+
+.sliderbtn{
+    
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top:20%;
+    left: 10%;
+    font-size: 60px;
+    margin-top: 50px;
+    margin-left: -20px;
+    padding: 10px;
+    background-color: lightgreen;
+    border-radius: 10px;
+    color: rgb(48, 49, 53);
+  
+}
+
+.sliderbtn:hover{
+    background-color:rgb(48, 49, 53) ;
+    color: lightgreen;
+    cursor: pointer;
+}
+
+
+
