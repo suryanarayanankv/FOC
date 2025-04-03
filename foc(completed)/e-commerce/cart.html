@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.sneakers - Shopping Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #111;
+            --light-gray: #f5f5f5;
+            --mid-gray: #e5e5e5;
+            --hover-gray: #f0f0f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--primary-black);
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes hover-lift {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-5px) scale(1.02); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--mid-gray);
+            transition: all 0.3s ease;
+        }
+
+        .navbar:hover {
+            background-color: var(--hover-gray);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-black);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-black);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .cart-items, .order-summary {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .cart-items:hover, .order-summary:hover {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--mid-gray);
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-item:hover {
+            background-color: var(--hover-gray);
+            animation: hover-lift 0.5s;
+        }
+
+        .cart-item-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-right: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-item:hover .cart-item-image {
+            transform: scale(1.05);
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--mid-gray);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-left: 20px;
+        }
+
+        .quantity-btn {
+            background: none;
+            border: none;
+            padding:10px;
+
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--mid-gray);
+        }
+        .quantity-input {
+            padding: 10px;
+            border: none;
+            width: 50px;
+            text-align: center;
+        }
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-black);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .checkout-btn:hover {
+            background-color: #333;
+            transform: scale(1.02);
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                 .sneakers
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="events.html">Events</a>
+            </div>
+
+        </nav>
+
+        <div class="cart-header" style="margin: 30px 0;">
+            <h1>Shopping Cart</h1>
+            <p>Review and manage your items before checkout</p>
+        </div>
+
+        <div class="cart-content">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src=".\img\blazer2.png" alt="Air Zoom Pegasus" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h3>Air Zoom Pegasus 39</h3>
+                        <p>Men's Running Shoes - Blue/White</p>
+                        <p>Size: UK 9 | Color: Blue | Category: Running</p>
+                        <p>₹17,990</p>
+                    </div>
+                    <div class="cart-item-actions">
+                        <div class="quantity-control">
+                            <button class="quantity-btn">-</button>
+                            <input type="number" value="2" class="quantity-input" min="1">
+                            <button class="quantity-btn">+</button>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="./img/blazer.png" alt="Formal Leather Oxford" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h3>Formal Leather Oxford</h3>
+                        <p>Men's Formal Shoes - Black</p>
+                        <p>Size: UK 8 | Color: Black | Category: Formal</p>
+                        <p>₹10,497</p>
+                    </div>
+                    <div class="cart-item-actions">
+                        <div class="quantity-control">
+                            <button class="quantity-btn">-</button>
+                            <input type="number" value="3" class="quantity-input" min="1">
+                            <button class="quantity-btn">+</button>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <span>Subtotal</span>
+                    <span>₹28,487</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <span>Discount</span>
+                    <span>-₹1,000</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <span>Tax</span>
+                    <span>₹5,128</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold;">
+                    <span>Total Amount</span>
+                    <span>₹32,615</span>
+                </div>
+                <div style="display: flex; margin-bottom: 15px;">
+                    <input type="text" placeholder="Enter coupon code" style="flex-grow: 1; padding: 10px; border: 1px solid var(--mid-gray);">
+                    <button style="padding: 10px 15px; background-color: var(--primary-black); color: white; border: none;">Apply</button>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+                <p style="text-align: center; margin-top: 10px; color: #888;">🔒 Secure payment • Protected checkout</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.quantity-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const input = e.target.parentElement.querySelector('input');
+                const value = parseInt(input.value);
+                
+                if (e.target.textContent === '+') {
+                    input.value = value + 1;
+                } else if (value > 1) {
+                    input.value = value - 1;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
